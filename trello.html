@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag n Drop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="trello.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/b6e76182eb.js"></script>
+ 
+</head>
+<body>
+	<div class="app">
+		<div class="lists" id="Todo">           
+            <i class="fa fa-plus-circle fa-5x ico" style="position:absolute;bottom:0;right:0;" data-toggle="modal" data-target="#addBoard" aria-hidden="true"></i>
+        </div>
+       
+    </div>
+    <div id="addTask" class="modal fade in" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Add Task</h3>
+                    <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                </div>
+                <div class="modal-body align-center">
+                    <div class="addList">
+                        <h5>Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
+                  <input type="text" id="title" placeholder="Enter Title">
+                  </div>
+                  <div class="addList">
+                    <h5>State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
+                  <input type="text" id="state" placeholder="Enter Current State">
+                  </div>
+                  <div class="addList">
+                    <h5>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
+                  <input type="date" id="date">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addTask()" >Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="addBoard" class="modal fade in" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Add Board</h3>
+                    <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                </div>
+                <div class="modal-body align-center">
+                    <div class="addList">
+                        <h5>Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
+                  <input type="text" id="boardtitle" placeholder="Enter Title">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addBoard()" >Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="editTask" class="modal fade in" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;Edit Task</h3>
+                    <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                </div>
+                <div class="modal-body align-center">
+                    <div class="addList">
+                        <h5>Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
+                  <input type="text" id="title1" placeholder="Enter Title">
+                  </div>
+                  <div class="addList">
+                    <h5>State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
+                  <input type="text" id="state1" placeholder="Enter Current State">
+                  </div>
+                  <div class="addList">
+                    <h5>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
+                  <input type="date" id="date1">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="editCard()" >Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+	<script src="trello.js"></script>
+</body>
+</html>
